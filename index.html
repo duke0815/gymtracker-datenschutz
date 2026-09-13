@@ -46,6 +46,7 @@
     letter-spacing: -.01em;
   }
   h2:first-of-type { margin-top: 0; }
+  h3 { margin: 1.75rem 0 .5rem; font-size: 1.02rem; color: var(--muted); }
   p, ul { margin: 0 0 1rem; }
   ul { padding-left: 1.25rem; }
   li { margin-bottom: .4rem; }
@@ -82,14 +83,20 @@
 <header>
   <div class="wrap">
     <h1>Datenschutzerklärung</h1>
-    <p>Android-App „GymTracker“ · Stand 20. August 2026</p>
+    <p>Android-App „GymTracker“ · Stand 13. September 2026</p>
   </div>
 </header>
 
 <main class="wrap">
 
-  <p class="lead">GymTracker erhebt keine Daten, überträgt keine Daten und gibt keine Daten
-  weiter. Alles, was Sie in der App eingeben, bleibt auf Ihrem Gerät.</p>
+  <p class="lead">GymTracker erhebt keine Daten und gibt keine Daten weiter. Alles, was Sie in
+  der App eingeben, bleibt auf Ihrem Gerät.</p>
+
+  <p>Eine einzige Ausnahme gibt es, und sie ist freiwillig: den <strong>GYMPANSE</strong>, den
+  KI-Coach. Er ist ab Werk abgeschaltet. Wer ihn nutzen will, muss dafür einen eigenen
+  API-Schlüssel von Anthropic in den Einstellungen hinterlegen. Erst dann – und nur für die
+  Beantwortung einer Frage, die Sie selbst stellen – verlässt eine Zusammenfassung Ihres
+  Trainings das Gerät. Ohne hinterlegten Schlüssel baut die App keine einzige Verbindung auf.</p>
 
   <h2>Verantwortlicher</h2>
   <div class="card">
@@ -117,23 +124,122 @@
     <li>Ihre Sätze mit Gewicht, Wiederholungen, Zeitpunkt und Notizen</li>
     <li>Ihre Workout-Vorlagen</li>
     <li>Einstellungen wie Pausendauer oder Backup-Rhythmus</li>
+    <li>die freiwilligen Angaben aus Ihrem Profil (siehe „Der GYMPANSE“)</li>
+    <li>Ihre Gewichtsmessungen, sofern Sie das Gewichtstagebuch benutzen</li>
+    <li>Ihre Einträge im Kalorientagebuch: Bezeichnung, Menge, Kalorien und gegebenenfalls Eiweiß</li>
   </ul>
   <p>Diese Daten liegen in einer Datenbank im privaten Speicherbereich der App. Andere Apps
   haben darauf keinen Zugriff. Der Betreiber erhält zu keinem Zeitpunkt Kenntnis davon.</p>
 
-  <h2>Keine Übertragung</h2>
-  <p>Die App besitzt nicht die Android-Berechtigung <code>INTERNET</code>. Sie kann technisch
-  keine Verbindung zu einem Server aufbauen – weder zu unseren noch zu fremden. Es gibt keine
-  Benutzerkonten, keine Cloud-Synchronisierung, keine Werbung und keine Analyse- oder
-  Absturzberichts-Dienste.</p>
+  <h2>Gesundheitsdaten</h2>
+  <p>Trainingsdaten, Körpergewicht und Ernährungsangaben sind <strong>Gesundheitsdaten im Sinne
+  von Art.&nbsp;9 DSGVO</strong> und damit besonders geschützt. Rechtsgrundlage für die
+  Verarbeitung auf Ihrem Gerät ist Ihre Einwilligung nach Art.&nbsp;9 Abs.&nbsp;2 lit.&nbsp;a
+  DSGVO, die Sie durch das Eintragen erteilen und jederzeit durch Löschen der Einträge
+  widerrufen können.</p>
+  <p>Beide Tagebücher sind <strong>freiwillig</strong>. Wer sie nicht benutzt, bei dem entstehen
+  auch keine solchen Daten. Die App setzt sich weder ein Gewichtsziel noch ein Kalorienziel,
+  mahnt keine Einträge an und bewertet keine Zahl.</p>
+
+  <h2>Übertragung</h2>
+  <p>Es gibt keine Benutzerkonten, keine Cloud-Synchronisierung, keine Werbung und keine
+  Analyse- oder Absturzberichts-Dienste. An den Betreiber wird nichts übertragen; für diese App
+  wird kein Server betrieben.</p>
+  <p>Die App besitzt seit Version 1.8 die Android-Berechtigung <code>INTERNET</code>. Sie wird
+  ausschließlich für den GYMPANSE benötigt. Ist kein API-Schlüssel hinterlegt, wird die
+  Berechtigung nie genutzt.</p>
+
+  <h2>Der GYMPANSE (KI-Coach)</h2>
+  <p>Der GYMPANSE ist ein Trainingsberater, der auf einem Sprachmodell des Unternehmens
+  Anthropic beruht. Er ist <strong>ab Werk abgeschaltet</strong> und lässt sich nur einschalten,
+  indem Sie in den Einstellungen einen eigenen, von Ihnen selbst bei Anthropic erstellten
+  API-Schlüssel hinterlegen. Vor der ersten Frage weist die App noch einmal ausdrücklich darauf
+  hin, dass dabei Daten das Gerät verlassen.</p>
+
+  <h3>Was übertragen wird</h3>
+  <p>Mit jeder Frage, die Sie stellen, geht eine Zusammenfassung Ihres Trainings mit:</p>
+  <ul>
+    <li>die Bezeichnungen Ihrer Geräte und die dazu gepflegten Muskelgruppen</li>
+    <li>wie oft und an welchen Tagen Sie trainiert haben, sowie die Anzahl Ihrer Sätze</li>
+    <li>je Gerät der zuletzt erreichte und der beste Satz (Gewicht und Wiederholungen)</li>
+    <li>die Namen Ihrer Workout-Vorlagen und wie oft Sie diese abgeschlossen haben</li>
+    <li>der Wortlaut Ihrer Frage sowie die letzten Nachrichten desselben Gesprächs</li>
+    <li>die Angaben aus Ihrem Profil, soweit Sie welche gemacht haben</li>
+  </ul>
+
+  <h3>Das Profil</h3>
+  <p>In den Einstellungen können Sie freiwillig Angaben zu sich selbst hinterlegen: Geschlecht,
+  Geburtsjahr, Körpergröße, Körpergewicht, Trainingserfahrung, Ihr Trainingsziel und eine freie
+  Notiz. Die Notiz ist dafür gedacht, Beschwerden oder Einschränkungen zu nennen („linke
+  Schulter zwickt beim Überkopfdrücken“), damit die Antworten dazu passen.</p>
+  <p>Jedes einzelne Feld ist freiwillig und darf leer bleiben; was leer bleibt, wird auch nicht
+  übertragen. Ohne hinterlegten API-Schlüssel verlässt das Profil das Gerät nie – es liegt dann
+  nur in den Einstellungen.</p>
+  <div class="card">
+    <p style="margin:0"><strong>Hinweis zu Gesundheitsdaten.</strong> Körpergewicht und
+    insbesondere Angaben zu Beschwerden sind Gesundheitsdaten im Sinne von Art.&nbsp;9 DSGVO und
+    damit besonders geschützt. Sie werden ausschließlich auf Grundlage Ihrer ausdrücklichen
+    Einwilligung nach Art.&nbsp;9 Abs.&nbsp;2 lit.&nbsp;a DSGVO verarbeitet, die Sie durch das
+    Ausfüllen dieser Felder erteilen. Tragen Sie nichts ein, findet insoweit auch keine
+    Verarbeitung statt. Sie können die Angaben jederzeit in den Einstellungen löschen.</p>
+  </div>
+
+  <h3>Was nicht übertragen wird</h3>
+  <p>Kein Name, keine E-Mail-Adresse, keine Geräte- oder Werbekennung, keine Standortdaten,
+  keine Fotos Ihrer Geräte, keine Notizen zu einzelnen Sätzen und keine einzelnen
+  Satz-Datensätze. Die genaue Zusammenfassung – Profil eingeschlossen – können Sie jederzeit in
+  den Einstellungen unter „Was wird gesendet?“ im Wortlaut nachlesen, bevor Sie fragen.</p>
+
+  <h3>Wohin es geht</h3>
+  <p>Empfänger ist Anthropic PBC, 548 Market St, PMB 90375, San Francisco, CA 94104, USA. Die
+  Übertragung erfolgt verschlüsselt (TLS) unmittelbar von Ihrem Gerät an Anthropic; sie läuft
+  über keinen Server des Betreibers. Es gelten die Bedingungen von Anthropic für die API,
+  insbesondere die <a href="https://www.anthropic.com/legal/privacy">Datenschutzerklärung</a>
+  und die <a href="https://www.anthropic.com/legal/commercial-terms">Commercial Terms</a>. Nach
+  den API-Bedingungen von Anthropic werden Eingaben nicht zum Training von Modellen
+  verwendet.</p>
+
+  <h3>Rechtsgrundlage</h3>
+  <p>Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung nach Art.&nbsp;6 Abs.&nbsp;1
+  lit.&nbsp;a DSGVO. Sie erteilen sie, indem Sie einen Schlüssel hinterlegen und den Hinweis vor
+  der ersten Frage bestätigen. Sie können sie jederzeit widerrufen, indem Sie den Schlüssel in
+  den Einstellungen entfernen – danach ist die Funktion wieder vollständig abgeschaltet. Die
+  Einwilligung in die Verarbeitung der Profilangaben widerrufen Sie, indem Sie die betreffenden
+  Felder leeren. Da die Übertragung in die USA erfolgt, wird auf Art.&nbsp;49 Abs.&nbsp;1
+  lit.&nbsp;a DSGVO hingewiesen.</p>
+
+  <h3>Ihr Schlüssel</h3>
+  <p>Der API-Schlüssel bleibt auf Ihrem Gerät. Er wird mit einem Schlüssel aus dem
+  Android-Keystore verschlüsselt abgelegt, von der Sicherung durch Android ausgenommen und
+  niemals an den Betreiber übertragen. Die Kosten der Nutzung rechnet Anthropic direkt mit Ihnen
+  ab; die App zeigt Ihnen in den Einstellungen eine Schätzung des laufenden Monats an.</p>
+
+  <h3>Was der GYMPANSE über Gewicht und Ernährung erfährt</h3>
+  <p>Benutzen Sie die Tagebücher <strong>und</strong> haben Sie einen API-Schlüssel hinterlegt,
+  enthält der an Anthropic übermittelte Auszug zusätzlich:</p>
+  <ul>
+    <li>Ihre letzte Gewichtsmessung mit Datum sowie erste und letzte Messung als Verlauf</li>
+    <li>den Kalorien- und Eiweißschnitt der letzten 14 Tage</li>
+    <li>Ihre am häufigsten eingetragenen Lebensmittel mit deren Werten</li>
+    <li>die Einträge des heutigen Tages, damit er beim Nachtragen nichts doppelt einträgt</li>
+  </ul>
+  <p>Einzelne Mahlzeiten zurückliegender Tage werden nicht übermittelt. Ohne hinterlegten
+  Schlüssel verlässt nichts davon das Gerät; wer die Tagebücher führt, aber keinen Schlüssel
+  hinterlegt hat, überträgt nichts.</p>
+
+  <p><strong>Keine medizinische Beratung.</strong> Die Antworten des GYMPANSE sind
+  Trainingshinweise und ersetzen weder ärztlichen noch physiotherapeutischen Rat. Ein
+  Sprachmodell kann sich irren.</p>
 
   <h2>Berechtigungen und wofür sie da sind</h2>
   <ul>
     <li><strong>Vibration</strong> – Rückmeldung beim Tippen und am Ende der Satzpause.</li>
-    <li><strong>Benachrichtigungen</strong> – nur für die Meldung am Pausenende. Diese Funktion
-      ist ab Werk ausgeschaltet; die Berechtigung wird erst erfragt, wenn Sie sie einschalten.</li>
-    <li><strong>Wecker stellen</strong> – damit diese Meldung zur richtigen Zeit kommt, auch bei
-      ausgeschaltetem Display.</li>
+    <li><strong>Benachrichtigungen</strong> – für die Meldung am Pausenende, für die wöchentliche
+      Prüfung der Sicherung und, falls eingeschaltet, für den Wochenüberblick des GYMPANSE.</li>
+    <li><strong>Wecker stellen</strong> – damit die Pausenmeldung zur richtigen Zeit kommt, auch
+      bei ausgeschaltetem Display.</li>
+    <li><strong>Internet</strong> – ausschließlich für den GYMPANSE. Ohne hinterlegten
+      API-Schlüssel wird sie nicht genutzt.</li>
     <li><strong>Fotos auswählen</strong> – über die Systemauswahl von Android. Die App erhält
       dabei nur das eine Bild, das Sie aussuchen, und legt eine Kopie in ihrem eigenen Speicher
       ab. Auf Ihre übrige Galerie hat sie keinen Zugriff.</li>
@@ -151,16 +257,20 @@
   keinen Einfluss auf den Funktionsumfang – die App ist vollständig kostenlos.</p>
 
   <h2>Löschen</h2>
-  <p>Alle Daten verschwinden restlos, wenn Sie die App deinstallieren. Innerhalb der App können
-  Sie einzelne Geräte, Sätze und Workouts löschen oder unter „Einstellungen“ den gesamten
-  Bestand zurücksetzen. Zuvor angelegte Backup-Dateien müssen Sie selbst entfernen.</p>
+  <p>Alle Daten verschwinden restlos, wenn Sie die App deinstallieren – der API-Schlüssel des
+  GYMPANSE inbegriffen. Innerhalb der App können Sie einzelne Geräte, Sätze und Workouts löschen
+  oder unter „Einstellungen“ den gesamten Bestand zurücksetzen. Zuvor angelegte Backup-Dateien
+  müssen Sie selbst entfernen.</p>
+  <p>Die Funktion „Alle Daten löschen“ in den Einstellungen entfernt auch Gewichts- und
+  Kalorientagebuch. Einzelne Einträge löschen Sie in der Statistik unter „Gewicht“
+  beziehungsweise „Essen“ mit dem Papierkorb neben der Zeile.</p>
 
   <h2>Ihre Rechte</h2>
   <p>Ihnen stehen nach der Datenschutz-Grundverordnung die Rechte auf Auskunft, Berichtigung,
   Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch zu. Da uns
-  keinerlei Daten aus der App erreichen, können wir eine Auskunft allerdings nur dahingehend
-  erteilen, dass keine Daten über Sie vorliegen. Die Kontrolle über Ihre Einträge liegt
-  ausschließlich bei Ihnen auf dem Gerät.</p>
+  keinerlei Daten aus der App erreichen – auch die des GYMPANSE nicht, der unmittelbar mit
+  Anthropic spricht –, können wir eine Auskunft nur dahingehend erteilen, dass keine Daten über
+  Sie vorliegen. Für die bei Anthropic verarbeiteten Daten ist Anthropic Ihr Ansprechpartner.</p>
   <p>Sind Sie der Ansicht, dass die Verarbeitung Ihrer Daten gegen geltendes Recht verstößt,
   können Sie sich bei der Aufsichtsbehörde beschweren:</p>
   <div class="card">
